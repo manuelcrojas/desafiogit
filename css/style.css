@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+header{
+    height: 100px;
+    padding: 0 50px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    text-transform: uppercase;
+    font-weight: 200;
+}
+.menu a{
+    color:black;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+.mostrar-menu, .esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+.mostrar-menu{
+    order: 1;
+}
+.menu a:hover, .mostrar-menu:hover, .esconder-menu:hover{
+    color: rgb(226, 223, 223);
+}
+#check{
+    display: none;
+}
+
+/* Banner */
+#banner{
+    padding: 0 50px;
+    background-image: url(../img/banner.jpg);
+    height: 45vh;
+    background-size:cover;
+    background-position: center;
+}
+#banner::before{
+    content:'';
+    position: absolute;
+    background: rgba(77, 77, 92, 0.6);
+    width: 100%;
+    height: 45vh;
+    left: 0;
+}
+.contenido-banner{
+    position: relative;
+    color: rgb(255, 255, 255);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contenido-banner h1{
+    font-size: 30px;
+    font-weight: 300;
+    padding: 10px 0px;
+}
+.contenido-banner h1 span{
+    font-weight: 600;
+}
+
+/* Estilos de secciones */
+.articulos{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 0;
+  }
+.articulos h2{
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+.card{
+    width: 280px;
+}
+.estilo-a{
+    font-family: sans-serif;
+}
+.estilo-a a{
+    text-decoration: none;
+    color: black;
+}
+.estilo-a a:hover{
+    text-decoration: underline;
+}
+.estilo-a .img-container{
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+}
+.estilo-a .img-container img{
+    width: 100%;
+    position: absolute;
+    top: -25%;
+    transition: all 0.5s;
+}
+.estilo-a:hover .img-container img{
+    transform: scale(1.2);
+}
+
+/* ESTILOS DE CONTACTO Y REGISTRO */
+#contacto{
+    width: 450px;
+    margin: auto;
+    background: rgb(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.titulo-contacto{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.estilo-contacto, textarea{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px; 
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+}
+.estilo-contacto1{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+
+/* Estilos de footer */
+footer{
+    width: 100%;
+}
+footer .titulo-footer{
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+.redes-sociales{
+    display: flex;
+    justify-content: center;
+}
+.redes-sociales a{
+    text-decoration: none;
+    color: black;
+}
+.redes-sociales i{
+    font-size: 35px;
+    padding: 0 25px 0 25px;
+}
+
+
+/* Responsive*/
+@media (max-width: 768px) 
+{ 
+/* Menu hamburguesa */
+ .mostrar-menu, .esconder-menu{
+    display: block;
+ }
+ .menu{
+     position: fixed;
+     width: 100%;
+     background: white;
+     height: 100vh;
+     right: -100%;
+     top: 0;
+     text-align: center;
+     padding: 100px 0px;
+     z-index: 100;
+     transition: 0.8;
+ }
+ .menu a{
+     display: block;
+     padding: 20px;
+ }
+ .esconder-menu{
+     position: absolute;
+     top: 40px;
+     right: 40px;
+ }
+ #check:checked ~ .menu{
+     right: 0;
+ }
+ /* Banner desaparece */
+#banner{ 
+    display: none;
+}
+}
+@media (max-width: 480px) {
+    #contacto{
+        width: 250px;
+    }
+}
+
+
